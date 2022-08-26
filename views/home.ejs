@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>USERS</title>
+</head>
+
+<body>
+    <div class="container">
+<h1>ALL USERS </h1>
+
+
+<% users.forEach((user)=>{ %>
+    <%   if(user.charAt(user.length-1)=='A'){ %>
+        <li style="color: green"> <%= user.split("-")[0] %> </li>
+        <% }else{ %>
+        <li style="color: red"> <%= user.split("-")[0] %> </li>
+    <% } %>
+<% }) %>
+<hr>
+
+<br>
+
+<h3 style="color:red"><a href="/inactive" style="color:red">CLICK HERE FOR INACTIVE USERS</a></h3>
+
+<h3 ><a href="/active" style="color:green">CLICK HERE FOR ACTIVE USERS</a></h3>
+<br>
+<br>
+<hr>
+<h1>Add user here</h1>
+<form action="/" method="post">
+
+<input type="text" placeholder="name" name="name">
+<br>
+<br>
+<button type="submit" class="btn btn-success">Add user</button>
+<hr>
+</form>
+
+    </div>
+</body>
+
+
